@@ -4,7 +4,7 @@
 #
 Name     : R-rstanarm
 Version  : 2.17.3
-Release  : 7
+Release  : 8
 URL      : https://cran.r-project.org/src/contrib/rstanarm_2.17.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstanarm_2.17.3.tar.gz
 Summary  : Bayesian Applied Regression Modeling via Stan
