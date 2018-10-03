@@ -1,0 +1,17 @@
+2.17.4
+R-BH
+R-Rcpp
+R-RcppEigen
+R-StanHeaders
+R-bayesplot
+R-callr
+R-gamm4
+R-gridExtra
+R-inline
+R-pkgbuild
+R-ps
+R-roxygen2
+R-rstantools
+R-shinystan
+R-shinythemes
+R-threejs

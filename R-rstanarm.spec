@@ -4,19 +4,24 @@
 #
 Name     : R-rstanarm
 Version  : 2.17.4
-Release  : 13
+Release  : 14
 URL      : https://cran.r-project.org/src/contrib/rstanarm_2.17.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstanarm_2.17.4.tar.gz
 Summary  : Bayesian Applied Regression Modeling via Stan
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-rstanarm-lib
+Requires: R-rstanarm-lib = %{version}-%{release}
 Requires: R-BH
 Requires: R-Rcpp
 Requires: R-RcppEigen
 Requires: R-StanHeaders
 Requires: R-bayesplot
+Requires: R-callr
 Requires: R-gamm4
+Requires: R-gridExtra
+Requires: R-inline
+Requires: R-pkgbuild
+Requires: R-ps
 Requires: R-roxygen2
 Requires: R-rstantools
 Requires: R-shinystan
@@ -27,13 +32,18 @@ BuildRequires : R-Rcpp
 BuildRequires : R-RcppEigen
 BuildRequires : R-StanHeaders
 BuildRequires : R-bayesplot
+BuildRequires : R-callr
 BuildRequires : R-gamm4
+BuildRequires : R-gridExtra
+BuildRequires : R-inline
+BuildRequires : R-pkgbuild
+BuildRequires : R-ps
 BuildRequires : R-roxygen2
 BuildRequires : R-rstantools
 BuildRequires : R-shinystan
 BuildRequires : R-shinythemes
 BuildRequires : R-threejs
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 package, which provides the R interface to the Stan C++ library for Bayesian
@@ -56,11 +66,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1525656383
+export SOURCE_DATE_EPOCH=1538605053
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1525656383
+export SOURCE_DATE_EPOCH=1538605053
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
