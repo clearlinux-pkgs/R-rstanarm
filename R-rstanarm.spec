@@ -4,27 +4,13 @@
 #
 Name     : R-rstanarm
 Version  : 2.18.2
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/rstanarm_2.18.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstanarm_2.18.2.tar.gz
 Summary  : Bayesian Applied Regression Modeling via Stan
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-rstanarm-lib = %{version}-%{release}
-Requires: R-BH
-Requires: R-Rcpp
-Requires: R-RcppEigen
-Requires: R-StanHeaders
-Requires: R-bayesplot
-Requires: R-betareg
-Requires: R-biglm
-Requires: R-gamm4
-Requires: R-mime
-Requires: R-rstantools
-Requires: R-shinystan
-Requires: R-shinythemes
-Requires: R-threejs
-Requires: R-yaml
 BuildRequires : R-BH
 BuildRequires : R-Rcpp
 BuildRequires : R-RcppEigen
@@ -32,8 +18,14 @@ BuildRequires : R-StanHeaders
 BuildRequires : R-bayesplot
 BuildRequires : R-betareg
 BuildRequires : R-biglm
+BuildRequires : R-callr
 BuildRequires : R-gamm4
+BuildRequires : R-gridExtra
+BuildRequires : R-inline
 BuildRequires : R-mime
+BuildRequires : R-pkgbuild
+BuildRequires : R-ps
+BuildRequires : R-roxygen2
 BuildRequires : R-rstantools
 BuildRequires : R-shinystan
 BuildRequires : R-shinythemes
@@ -62,10 +54,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549267568
+export SOURCE_DATE_EPOCH=1549277765
 
 %install
-export SOURCE_DATE_EPOCH=1549267568
+export SOURCE_DATE_EPOCH=1549277765
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
