@@ -4,7 +4,7 @@
 #
 Name     : R-rstanarm
 Version  : 2.18.2
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/rstanarm_2.18.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstanarm_2.18.2.tar.gz
 Summary  : Bayesian Applied Regression Modeling via Stan
@@ -54,10 +54,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549277765
+export SOURCE_DATE_EPOCH=1552859524
 
 %install
-export SOURCE_DATE_EPOCH=1549277765
+export SOURCE_DATE_EPOCH=1552859524
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -93,8 +93,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library rstanarm|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  rstanarm || :
 
 
 %files
@@ -183,10 +182,102 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/rstanarm/include/csr_matrix_times_vector2.hpp
 /usr/lib64/R/library/rstanarm/include/meta_header.hpp
 /usr/lib64/R/library/rstanarm/include/tests.cpp
-/usr/lib64/R/library/rstanarm/libs/symbols.rds
+/usr/lib64/R/library/rstanarm/tests/testthat.R
+/usr/lib64/R/library/rstanarm/tests/testthat/Rplots.pdf
+/usr/lib64/R/library/rstanarm/tests/testthat/helpers/SW.R
+/usr/lib64/R/library/rstanarm/tests/testthat/helpers/check_for_error.R
+/usr/lib64/R/library/rstanarm/tests/testthat/helpers/expect_equivalent_loo.R
+/usr/lib64/R/library/rstanarm/tests/testthat/helpers/expect_gg.R
+/usr/lib64/R/library/rstanarm/tests/testthat/helpers/expect_identical_sorted_stanmats.R
+/usr/lib64/R/library/rstanarm/tests/testthat/helpers/expect_linpred_equal.R
+/usr/lib64/R/library/rstanarm/tests/testthat/helpers/expect_matrix.R
+/usr/lib64/R/library/rstanarm/tests/testthat/helpers/expect_ppd.R
+/usr/lib64/R/library/rstanarm/tests/testthat/helpers/expect_stanmvreg.R
+/usr/lib64/R/library/rstanarm/tests/testthat/helpers/expect_stanreg.R
+/usr/lib64/R/library/rstanarm/tests/testthat/helpers/expect_survfit.R
+/usr/lib64/R/library/rstanarm/tests/testthat/helpers/get_tols.R
+/usr/lib64/R/library/rstanarm/tests/testthat/helpers/recover_pars.R
+/usr/lib64/R/library/rstanarm/tests/testthat/include/csr_matrix_times_vector2.hpp
+/usr/lib64/R/library/rstanarm/tests/testthat/include/meta_header.hpp
+/usr/lib64/R/library/rstanarm/tests/testthat/include/tests.cpp
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/bernoulli.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/binomial.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/continuous.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/count.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/data/NKX.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/data/data_assoc.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/data/data_betareg.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/data/data_event.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/data/data_glm.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/data/data_mvmer.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/data/dimensions_mvmer.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/data/glmer_stuff.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/data/glmer_stuff2.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/data/hyperparameters.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/data/hyperparameters_assoc.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/data/hyperparameters_event.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/data/hyperparameters_mvmer.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/data/weights_offset.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/functions/SSfunctions.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/functions/bernoulli_likelihoods.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/functions/binomial_likelihoods.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/functions/common_functions.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/functions/continuous_likelihoods.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/functions/count_likelihoods.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/functions/jm_functions.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/functions/mvmer_functions.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/gqs/gen_quantities_mvmer.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/jm.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/lm.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/model/assoc_evaluate.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/model/eta_add_Zb.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/model/eta_no_intercept.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/model/eta_z_no_intercept.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/model/event_lp.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/model/make_eta.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/model/make_eta_bern.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/model/make_eta_tmp.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/model/make_eta_tmp2.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/model/make_eta_z.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/model/mvmer_lp.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/model/priors_betareg.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/model/priors_glm.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/model/priors_mvmer.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/mvmer.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/parameters/parameters_assoc.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/parameters/parameters_betareg.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/parameters/parameters_event.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/parameters/parameters_glm.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/parameters/parameters_mvmer.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/polr.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/pre/Brilleman_copyright.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/pre/Columbia_copyright.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/pre/license.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/tdata/tdata_betareg.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/tdata/tdata_glm.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/tdata/tdata_mvmer.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/tparameters/tparameters_betareg.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/tparameters/tparameters_glm.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/stan_files/tparameters/tparameters_mvmer.stan
+/usr/lib64/R/library/rstanarm/tests/testthat/test_loo.R
+/usr/lib64/R/library/rstanarm/tests/testthat/test_methods.R
+/usr/lib64/R/library/rstanarm/tests/testthat/test_misc.R
+/usr/lib64/R/library/rstanarm/tests/testthat/test_plots.R
+/usr/lib64/R/library/rstanarm/tests/testthat/test_posterior_predict.R
+/usr/lib64/R/library/rstanarm/tests/testthat/test_pp_check.R
+/usr/lib64/R/library/rstanarm/tests/testthat/test_pp_validate.R
+/usr/lib64/R/library/rstanarm/tests/testthat/test_predict.R
+/usr/lib64/R/library/rstanarm/tests/testthat/test_stan_betareg.R
+/usr/lib64/R/library/rstanarm/tests/testthat/test_stan_clogit.R
+/usr/lib64/R/library/rstanarm/tests/testthat/test_stan_functions.R
+/usr/lib64/R/library/rstanarm/tests/testthat/test_stan_glm.R
+/usr/lib64/R/library/rstanarm/tests/testthat/test_stan_glmer.R
+/usr/lib64/R/library/rstanarm/tests/testthat/test_stan_jm.R
+/usr/lib64/R/library/rstanarm/tests/testthat/test_stan_lm.R
+/usr/lib64/R/library/rstanarm/tests/testthat/test_stan_mvmer.R
+/usr/lib64/R/library/rstanarm/tests/testthat/test_stan_nlmer.R
+/usr/lib64/R/library/rstanarm/tests/testthat/test_stan_polr.R
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/rstanarm/libs/rstanarm.so
-/usr/lib64/R/library/rstanarm/libs/rstanarm.so.avx2
-/usr/lib64/R/library/rstanarm/libs/rstanarm.so.avx512
