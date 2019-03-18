@@ -4,17 +4,19 @@
 #
 Name     : R-rstanarm
 Version  : 2.18.2
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/rstanarm_2.18.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstanarm_2.18.2.tar.gz
 Summary  : Bayesian Applied Regression Modeling via Stan
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-rstanarm-lib = %{version}-%{release}
-Requires: R-base64enc
-Requires: R-crosstalk
-Requires: R-igraph
+Requires: R-minqa
+Requires: R-nloptr
+Requires: R-reshape2
+Requires: R-rsconnect
 BuildRequires : R-BH
+BuildRequires : R-DT
 BuildRequires : R-Rcpp
 BuildRequires : R-RcppEigen
 BuildRequires : R-StanHeaders
@@ -23,20 +25,46 @@ BuildRequires : R-bayesplot
 BuildRequires : R-betareg
 BuildRequires : R-biglm
 BuildRequires : R-callr
+BuildRequires : R-colourpicker
 BuildRequires : R-crosstalk
+BuildRequires : R-dplyr
+BuildRequires : R-dygraphs
 BuildRequires : R-gamm4
+BuildRequires : R-ggridges
 BuildRequires : R-gridExtra
+BuildRequires : R-gtable
+BuildRequires : R-gtools
+BuildRequires : R-htmlwidgets
 BuildRequires : R-igraph
 BuildRequires : R-inline
+BuildRequires : R-lazyeval
+BuildRequires : R-lme4
+BuildRequires : R-loo
 BuildRequires : R-mime
+BuildRequires : R-minqa
+BuildRequires : R-munsell
+BuildRequires : R-nloptr
+BuildRequires : R-pillar
 BuildRequires : R-pkgbuild
+BuildRequires : R-pkgconfig
+BuildRequires : R-plyr
+BuildRequires : R-prettyunits
 BuildRequires : R-ps
+BuildRequires : R-purrr
+BuildRequires : R-reshape2
+BuildRequires : R-rlang
 BuildRequires : R-roxygen2
+BuildRequires : R-rsconnect
+BuildRequires : R-rstan
 BuildRequires : R-rstantools
+BuildRequires : R-scales
 BuildRequires : R-shinystan
 BuildRequires : R-shinythemes
 BuildRequires : R-threejs
+BuildRequires : R-tibble
+BuildRequires : R-xts
 BuildRequires : R-yaml
+BuildRequires : R-zoo
 BuildRequires : buildreq-R
 
 %description
@@ -60,10 +88,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552892999
+export SOURCE_DATE_EPOCH=1552947751
 
 %install
-export SOURCE_DATE_EPOCH=1552892999
+export SOURCE_DATE_EPOCH=1552947751
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
