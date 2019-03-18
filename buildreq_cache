@@ -3,12 +3,15 @@ R-BH
 R-Rcpp
 R-RcppEigen
 R-StanHeaders
+R-base64enc
 R-bayesplot
 R-betareg
 R-biglm
 R-callr
+R-crosstalk
 R-gamm4
 R-gridExtra
+R-igraph
 R-inline
 R-mime
 R-pkgbuild

@@ -4,23 +4,29 @@
 #
 Name     : R-rstanarm
 Version  : 2.18.2
-Release  : 21
+Release  : 22
 URL      : https://cran.r-project.org/src/contrib/rstanarm_2.18.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstanarm_2.18.2.tar.gz
 Summary  : Bayesian Applied Regression Modeling via Stan
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-rstanarm-lib = %{version}-%{release}
+Requires: R-base64enc
+Requires: R-crosstalk
+Requires: R-igraph
 BuildRequires : R-BH
 BuildRequires : R-Rcpp
 BuildRequires : R-RcppEigen
 BuildRequires : R-StanHeaders
+BuildRequires : R-base64enc
 BuildRequires : R-bayesplot
 BuildRequires : R-betareg
 BuildRequires : R-biglm
 BuildRequires : R-callr
+BuildRequires : R-crosstalk
 BuildRequires : R-gamm4
 BuildRequires : R-gridExtra
+BuildRequires : R-igraph
 BuildRequires : R-inline
 BuildRequires : R-mime
 BuildRequires : R-pkgbuild
@@ -54,10 +60,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552859524
+export SOURCE_DATE_EPOCH=1552892999
 
 %install
-export SOURCE_DATE_EPOCH=1552859524
+export SOURCE_DATE_EPOCH=1552892999
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
