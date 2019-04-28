@@ -4,13 +4,14 @@
 #
 Name     : R-rstanarm
 Version  : 2.18.2
-Release  : 26
+Release  : 27
 URL      : https://cran.r-project.org/src/contrib/rstanarm_2.18.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstanarm_2.18.2.tar.gz
 Summary  : Bayesian Applied Regression Modeling via Stan
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-rstanarm-lib = %{version}-%{release}
+Requires: R-matrixStats
 BuildRequires : R-BH
 BuildRequires : R-DT
 BuildRequires : R-Rcpp
@@ -36,6 +37,7 @@ BuildRequires : R-inline
 BuildRequires : R-lazyeval
 BuildRequires : R-lme4
 BuildRequires : R-loo
+BuildRequires : R-matrixStats
 BuildRequires : R-mime
 BuildRequires : R-minqa
 BuildRequires : R-munsell
@@ -84,10 +86,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552950894
+export SOURCE_DATE_EPOCH=1556465858
 
 %install
-export SOURCE_DATE_EPOCH=1552950894
+export SOURCE_DATE_EPOCH=1556465858
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -123,7 +125,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  rstanarm || :
+R CMD check --no-manual --no-examples --no-codoc rstanarm || :
 
 
 %files

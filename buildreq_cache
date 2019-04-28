@@ -24,6 +24,7 @@ R-inline
 R-lazyeval
 R-lme4
 R-loo
+R-matrixStats
 R-mime
 R-minqa
 R-munsell
