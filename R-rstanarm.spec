@@ -4,65 +4,35 @@
 #
 Name     : R-rstanarm
 Version  : 2.18.2
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/rstanarm_2.18.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstanarm_2.18.2.tar.gz
 Summary  : Bayesian Applied Regression Modeling via Stan
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-rstanarm-lib = %{version}-%{release}
-Requires: R-matrixStats
-BuildRequires : R-BH
-BuildRequires : R-DT
+Requires: R-Rcpp
+Requires: R-bayesplot
+Requires: R-betareg
+Requires: R-biglm
+Requires: R-gamm4
+Requires: R-ggplot2
+Requires: R-lme4
+Requires: R-loo
+Requires: R-rstan
+Requires: R-rstantools
+Requires: R-shinystan
 BuildRequires : R-Rcpp
-BuildRequires : R-RcppEigen
-BuildRequires : R-StanHeaders
-BuildRequires : R-base64enc
 BuildRequires : R-bayesplot
 BuildRequires : R-betareg
 BuildRequires : R-biglm
-BuildRequires : R-callr
-BuildRequires : R-colourpicker
-BuildRequires : R-crosstalk
-BuildRequires : R-dplyr
-BuildRequires : R-dygraphs
 BuildRequires : R-gamm4
-BuildRequires : R-ggridges
-BuildRequires : R-gridExtra
-BuildRequires : R-gtable
-BuildRequires : R-gtools
-BuildRequires : R-htmlwidgets
-BuildRequires : R-igraph
-BuildRequires : R-inline
-BuildRequires : R-lazyeval
+BuildRequires : R-ggplot2
 BuildRequires : R-lme4
 BuildRequires : R-loo
-BuildRequires : R-matrixStats
-BuildRequires : R-mime
-BuildRequires : R-minqa
-BuildRequires : R-munsell
-BuildRequires : R-nloptr
-BuildRequires : R-pillar
-BuildRequires : R-pkgbuild
-BuildRequires : R-pkgconfig
-BuildRequires : R-plyr
-BuildRequires : R-prettyunits
-BuildRequires : R-ps
-BuildRequires : R-purrr
-BuildRequires : R-reshape2
-BuildRequires : R-rlang
-BuildRequires : R-roxygen2
-BuildRequires : R-rsconnect
 BuildRequires : R-rstan
 BuildRequires : R-rstantools
-BuildRequires : R-scales
 BuildRequires : R-shinystan
-BuildRequires : R-shinythemes
-BuildRequires : R-threejs
-BuildRequires : R-tibble
-BuildRequires : R-xts
-BuildRequires : R-yaml
-BuildRequires : R-zoo
 BuildRequires : buildreq-R
 
 %description
@@ -85,13 +55,13 @@ lib components for the R-rstanarm package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1556465858
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1563586889
 
 %install
-export SOURCE_DATE_EPOCH=1556465858
+export SOURCE_DATE_EPOCH=1563586889
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -120,7 +90,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
