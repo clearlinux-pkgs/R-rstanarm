@@ -1,4 +1,6 @@
 2.19.2
+R-RcppEigen
 R-betareg
 R-biglm
 R-gamm4
+util-linux

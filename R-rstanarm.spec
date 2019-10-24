@@ -4,7 +4,7 @@
 #
 Name     : R-rstanarm
 Version  : 2.19.2
-Release  : 31
+Release  : 32
 URL      : https://cran.r-project.org/src/contrib/rstanarm_2.19.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstanarm_2.19.2.tar.gz
 Summary  : Bayesian Applied Regression Modeling via Stan
@@ -12,10 +12,8 @@ Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-rstanarm-lib = %{version}-%{release}
 Requires: R-Rcpp
+Requires: R-RcppEigen
 Requires: R-bayesplot
-Requires: R-betareg
-Requires: R-biglm
-Requires: R-gamm4
 Requires: R-ggplot2
 Requires: R-lme4
 Requires: R-loo
@@ -23,6 +21,7 @@ Requires: R-rstan
 Requires: R-rstantools
 Requires: R-shinystan
 BuildRequires : R-Rcpp
+BuildRequires : R-RcppEigen
 BuildRequires : R-bayesplot
 BuildRequires : R-betareg
 BuildRequires : R-biglm
@@ -34,6 +33,7 @@ BuildRequires : R-rstan
 BuildRequires : R-rstantools
 BuildRequires : R-shinystan
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 package, which provides the R interface to the Stan C++ library for Bayesian
@@ -56,10 +56,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570434173
+export SOURCE_DATE_EPOCH=1571904545
 
 %install
-export SOURCE_DATE_EPOCH=1570434173
+export SOURCE_DATE_EPOCH=1571904545
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
