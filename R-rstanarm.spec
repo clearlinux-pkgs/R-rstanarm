@@ -4,7 +4,7 @@
 #
 Name     : R-rstanarm
 Version  : 2.19.3
-Release  : 36
+Release  : 37
 URL      : https://cran.r-project.org/src/contrib/rstanarm_2.19.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstanarm_2.19.3.tar.gz
 Summary  : Bayesian Applied Regression Modeling via Stan
@@ -52,21 +52,22 @@ lib components for the R-rstanarm package.
 
 %prep
 %setup -q -c -n rstanarm
+cd %{_builddir}/rstanarm
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1584213016
+export SOURCE_DATE_EPOCH=1589788643
 
 %install
-export SOURCE_DATE_EPOCH=1584213016
+export SOURCE_DATE_EPOCH=1589788643
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
