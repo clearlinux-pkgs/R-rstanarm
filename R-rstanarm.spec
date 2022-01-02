@@ -4,7 +4,7 @@
 #
 Name     : R-rstanarm
 Version  : 2.21.1
-Release  : 50
+Release  : 51
 URL      : https://cran.r-project.org/src/contrib/rstanarm_2.21.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstanarm_2.21.1.tar.gz
 Summary  : Bayesian Applied Regression Modeling via Stan
@@ -59,10 +59,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1640975080
+export SOURCE_DATE_EPOCH=1641113721
 
 %install
-export SOURCE_DATE_EPOCH=1640975080
+export SOURCE_DATE_EPOCH=1641113721
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
