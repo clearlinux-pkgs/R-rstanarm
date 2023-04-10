@@ -5,7 +5,7 @@
 #
 Name     : R-rstanarm
 Version  : 2.21.4
-Release  : 59
+Release  : 60
 URL      : https://cran.r-project.org/src/contrib/rstanarm_2.21.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstanarm_2.21.4.tar.gz
 Summary  : Bayesian Applied Regression Modeling via Stan
@@ -39,9 +39,6 @@ BuildRequires : R-rstan
 BuildRequires : R-rstantools
 BuildRequires : R-shinystan
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 package, which provides the R interface to the Stan C++ library for Bayesian
@@ -73,10 +70,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681060788
+export SOURCE_DATE_EPOCH=1681155199
 
 %install
-export SOURCE_DATE_EPOCH=1681060788
+export SOURCE_DATE_EPOCH=1681155199
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/R-rstanarm
 cp %{_builddir}/rstanarm/src/stan_files/pre/license.stan %{buildroot}/usr/share/package-licenses/R-rstanarm/6b0804cddea750bf76fc8ae21b317ae9c1ad7f9f || :
